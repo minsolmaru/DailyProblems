@@ -27,3 +27,20 @@ def first_player_wins(a,b,c):
         return (len(heaps) % 2 == 0)
     return (a^b^c) != 0
 
+"""
+1. special endgame when everything is size 1
+2. normal nim game
+
+first if all equals to 1, whoever makes the last move loses. 
+So
+- odd number of heaps, first player loses
+- even number of heaps, first player wins!
+
+normal nim logic is bitwise XOR,
+1 ^ 1 = 0
+1 ^ 0 = 1 
+0 ^ 0 = 0
+
+if XOR = 0,l player to move is losing as heaps are balanced. opposing player can always restore balance
+if XOR is non 0, player to move is winning
+"""
