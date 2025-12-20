@@ -31,5 +31,5 @@ def min_quxes(line):
     if (r % 2) == (g % 2) == (b % 2):
         return 2
     return 1
-
 print(min_quxes(['R', 'G', 'B', 'G', 'B']))
+print(min_quxes(['R''R','R','R','R',] ))
