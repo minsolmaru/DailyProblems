@@ -13,26 +13,26 @@ Write a function that returns how many steps this will take for a given input N.
 """
 
 
-def kaprekar_constant(n:int) -> int:
+def kaprekar_constant(n: int) -> int:
     if not (0 <= n <= 9999):
         raise ValueError("Number must be between 0 and 9999 inclusive.")
     
     s = f"{n:04d}"
     if len(set(s)) < 2:
-        raise ValueError ("n must have at least 2 distinct digits")
+        raise ValueError("n must have at least 2 distinct digits")
     
     target = 6174
-    steps = 0 
+    steps = 0
 
     while n != target:
         s = f"{n:04d}"
         asc = int("".join(sorted(s)))
-        desc = int("".join(sorted(s, reverse = True)))
-        n = asc - desc
+        desc = int("".join(sorted(s, reverse=True)))
+        n = desc - asc
         steps += 1
-    
 
     return steps
+
 
 
 print(kaprekar_constant(1234))

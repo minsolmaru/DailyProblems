@@ -6,6 +6,10 @@ For example, given a population with weights [100, 200, 150, 80] and a boat limi
 """
 
 def rescue(weights, k):
+
+    if max(weights) > k:
+        return "theres an individual too heavy for rescue!"
+    
     weights.sort()
     left, right = 0, len(weights) - 1
     boats = 0

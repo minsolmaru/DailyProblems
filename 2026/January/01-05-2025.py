@@ -8,6 +8,29 @@ determine the length of the longest portion of her path that consists of just tw
 For example, given the input [2, 1, 2, 3, 3, 1, 3, 5], the longest portion will involve types 1 and 3, with a length of four.
 """
 
+def longest_two_types(apples):
+    from collections import defaultdict
 
-if our map size > 2 
+    count = defaultdict(int)
+    left = 0
+    max_len = 0
+
+    for right in range(len(apples)):
+        count[apples[right]] += 1
+
+        while len(count) > 2:
+            count[apples[left]] -= 1
+            if count[apples[left]] == 0:
+                del count[apples[left]]
+            left += 1
+
+        max_len = max(max_len, right - left + 1)
+
+    return max_len
+
+
+
+
+
+
 
